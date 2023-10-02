@@ -2,13 +2,13 @@ package ru.stretenskiy.autoservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.stretenskiy.autoservice.entity.Master;
+import ru.stretenskiy.autoservice.entity.Servicing;
 
 import java.util.Optional;
 
 @Repository
-public interface MasterRepository  extends JpaRepository<Master, Long> {
+public interface ServicingRepository extends JpaRepository<Servicing, Long> {
 
-    Optional<Master> findByName(String name);
+    Optional<Servicing> findByName(String servicingName);
 
 }
