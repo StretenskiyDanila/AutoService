@@ -1,13 +1,10 @@
 package ru.stretenskiy.autoservice.services.impl;
 
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.constraints.NotNull;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.stretenskiy.autoservice.dto.CarDTO;
 import ru.stretenskiy.autoservice.entities.Car;
 import ru.stretenskiy.autoservice.repositories.CarRepository;
 import ru.stretenskiy.autoservice.services.CarService;
@@ -36,7 +33,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     @Transactional
-    public void deleteCar(Car car) {
+    public void deleteCar(@NotNull Car car) {
         log.info("Delete {}", car);
         carRepository.delete(car);
     }

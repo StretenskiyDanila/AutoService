@@ -1,7 +1,6 @@
 package ru.stretenskiy.autoservice.dto;
 
 import lombok.Data;
-import ru.stretenskiy.autoservice.entities.Master;
 import ru.stretenskiy.autoservice.entities.Work;
 
 import java.sql.Date;
@@ -13,7 +12,7 @@ public class WorkDTO {
     private Date dateWork;
     private Long master;
     private Long car;
-    private Long service;
+    private Long servicing;
 
     public static WorkDTO buildWorkDTO(Work work) {
         WorkDTO workDTO = new WorkDTO();
@@ -21,7 +20,7 @@ public class WorkDTO {
         workDTO.setDateWork(work.getDateWork());
         workDTO.setMaster(work.getMaster().getId());
         workDTO.setCar(work.getCar().getId());
-        workDTO.setService(work.getService().getId());
+        workDTO.setServicing(work.getServicing().getId());
         return workDTO;
     }
 

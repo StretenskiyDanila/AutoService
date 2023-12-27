@@ -28,7 +28,7 @@ public class Work {
 
     @OneToOne
     @JoinColumn(name = "service_id")
-    private Service service;
+    private Servicing servicing;
 
     @OneToOne
     @JoinColumn(name = "master_id")
@@ -39,12 +39,12 @@ public class Work {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Work work = (Work) o;
-        return Objects.equals(id, work.id) && Objects.equals(dateWork, work.dateWork) && Objects.equals(car, work.car) && Objects.equals(service, work.service) && Objects.equals(master, work.master);
+        return Objects.equals(id, work.id) && Objects.equals(dateWork, work.dateWork) && Objects.equals(car, work.car) && Objects.equals(servicing, work.servicing) && Objects.equals(master, work.master);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dateWork, car, service, master);
+        return Objects.hash(id, dateWork, car, servicing, master);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class Work {
                 "id=" + id +
                 ", dateWork=" + dateWork +
                 ", car=" + car +
-                ", service=" + service +
+                ", service=" + servicing +
                 ", master=" + master +
                 '}';
     }

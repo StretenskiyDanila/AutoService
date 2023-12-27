@@ -1,5 +1,6 @@
 package ru.stretenskiy.autoservice.services.impl;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,20 +26,20 @@ public class MasterServiceImpl implements MasterService {
 
     @Override
     @Transactional
-    public Long saveMaster(Master master) {
+    public Long saveMaster(@NotNull Master master) {
         log.info("Saving new {}", master);
         return masterRepository.save(master).getId();
     }
 
     @Override
     @Transactional
-    public void deleteMaster(Master master) {
+    public void deleteMaster(@NotNull Master master) {
         log.info("Delete {}", master);
         masterRepository.delete(master);
     }
 
     @Override
-    public Optional<Master> getMasterById(Long id) {
+    public Optional<Master> getMasterById(@NotNull Long id) {
         return masterRepository.findById(id);
     }
 
