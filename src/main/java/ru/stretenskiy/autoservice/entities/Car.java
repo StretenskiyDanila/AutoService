@@ -1,6 +1,6 @@
 package ru.stretenskiy.autoservice.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 import java.util.Objects;
